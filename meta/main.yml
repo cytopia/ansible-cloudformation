@@ -33,3 +33,4 @@ galaxy_info:
     - cloud
     - cfn
 dependencies: []
+version: 1.0.0
