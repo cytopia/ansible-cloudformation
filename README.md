@@ -68,6 +68,8 @@ The following variables are available in `defaults/main.yml` and can be used to 
 | `cloudformation_required` | list | `[]` | Array of available cloudformation stack keys that you want to enforce to be required instead of being optional. Each cloudformation stack item will be checked against the customly set required keys. In case a stack item does not contain any of those keys, an error will be thrown before any deployment has happened. |
 | `cloudformation_defaults` | dict | `{}` | Dictionary of default values to apply to every cloudformation stack. Note that those values can still be overwritten on a per stack definition. |
 | `cloudformation_stacks` | list | `[]` | Array of cloudformation stacks to deploy. |
+| `pre_detect_drift` | bool | `False` | Detect if stacks have drifted before attempting actions. |
+| `detect_drift` | bool | `False` | Detect if stacks have drifted after executing actions. |
 
 ### Details
 
@@ -107,6 +109,10 @@ This section contains a more detailed describtion about available dict or array 
 | `create_changeset` | bool | optional | Overrides default(True) attempt to use changesets |
 | `changeset_name` | string | optional | Overrides default('Ansible') name to use for changesets |
 | `disable_rollback` | bool | optional | Overrides default(True) when cf error rollback stack |
+| `pre_detect_drift` | bool | optional | Detect if stack has drifted before attempting actions. (overwrites default) |
+| `detect_drift` | bool | optional | Detect if stack has drifted after executing actions. (overwrites default) |
+| `ssm_secret_vars` | list | optional | variables to publish to ssm as secrets (under ssm_prefix) |
+| `ssm_kms_key_id` | string | optional | required if ssm_secret_vars is set, kms key to use with secure string |
 
 
 ### Examples

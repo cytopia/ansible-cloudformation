@@ -96,4 +96,5 @@ changeset_name: "Ansible"
 # Default to rollback off
 disable_rollback: True
 
-detect_drift: False
+pre_detect_drift: False #detect if stack(s) have drifted before actions
+detect_drift: False #detect if stack(s) have drifted after actions
